@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>📱Mobile app📱</title>
+</head>
+<body>
+<div class="main-display">
+    <div class="custom-navbar">
+        <h3 id="navbar-content">Main</h3>
+    </div>
+
+    <div class="page-holder">
+        <div class="page page-profile" id="profile-page">
+            <div class="card card-profile">
+                <div class="avatar">
+                    <img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Bill_Gates_1977.png"
+                         class="card-img-top" alt="Аватарка профиля">
+                </div>
+                <div class="card-body" id="card-profile">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="card-title" id="profile-name"></h5>
+                        <button class="btn btn-light" id="btn-redact-profile">
+                            Ред.
+                        </button>
+                    </div>
+                    <p class="card-text" id="profile-description"></p>
+                </div>
+                <form id="profile-form" class="form-profile">
+                    <div class="form-group">
+                        <input type="text" name="name" autocomplete="off" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="description" autocomplete="off" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="btn-save-profile">Сохранить</button>
+                </form>
+            </div>
+        </div>
+        <div class="page" id="contacts-page">
+            <form id="contacts-search-form" class="form-inline">
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="text" name="search-query-contacts" class="form-control" placeholder="Найти...">
+                    </div>
+                </div>
+            </form>
+            <div class="contacts">
+                <ul class="list-group list-group-flush" id="contacts-list">
+                    <li class="list-group-item">
+                        Dapibus ac facilisis in
+                        <div>
+                            <small>7678687687</small>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- Кнопка для добавления контактов -->
+            <button class="btn-add" id="btn-open-contact-modal" data-toggle="modal" data-target="#modal-create-contact">
+                <svg class="bi bi-plus" width="1em" height="1em" viewBox="0 0 16 16" fill="#fff"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                          d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
+                    <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
+                </svg>
+            </button>
+
+            <div class="modal fade" id="modal-create-contact" tabindex="-1" role="dialog"
+                 aria-labelledby="modal-contact-header" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modal-contact-header">Создать контакт</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="add-contact-form">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="name" placeholder="Имя друга"
+                                           autocomplete="off">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="mobile" placeholder="Номер телефона"
+                                           autocomplete="off">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Добавить</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page" id="list-page">
+            <div class="list">
+                <ul class="list-group list-group-flush" id="todo-list">
+                    0
+                    </li>
+                </ul>
+            </div>
+            <div class="modal fade" id="modal-create-todo" tabindex="-1" role="dialog"
+                 aria-labelledby="modal-todo-header" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modal-todo-header">Создать TODO</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="add-todo-form">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="todo" placeholder="TODO"
+                                           autocomplete="off">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Добавить</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div aria-hidden="true" aria-labelledby="modal-correct-header" class="modal fade" id="modal-correct-todo"
+                 role="dialog" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modal-correct-header">TODO</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="correct-form">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="inputCorrect" name="corect" placeholder="TODO" value=""
+                                           autocomplete="off">
+                                </div>
+                                <button type="submit" id="applyCorrect" class="btn btn-primary">Применить изменения</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-menu d-flex justify-content-center toDoControls ">
+                <button class="btn-toDo" id="btn-open-todo-modal" data-toggle="modal" data-target="#modal-create-todo">
+                    <p class="todoBtn">Добавить задание</p>
+                </button>
+                <button class="btn-toDo" id="check-all">
+                    <p class="todoBtn">Отметить все</p>
+                </button>
+                <button class="btn-toDo" id="unchek-all">
+                    <p class="todoBtn">Снять отметки</p>
+                </button>
+                <button class="btn-toDo" id="clear-checked">
+                    <p class="todoBtn">Удалить отмеченные</p>
+                </button>
+            </div>
+        </div>
+        <div class="page page-settigns" id="settings-page">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p>
+                            Очистить localstorage
+                        </p>
+                        <button class="btn btn-primary" id="btn-clear-store">
+                            Очистить
+                        </button>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p>
+                            Тема
+                        </p>
+                        <div class="switch" id="switch-theme" data-checked="0">
+                            <div class="switch-circle"></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="bottom-menu d-flex justify-content-center">
+        <!-- Профиль, Контакты, Список дел, Настройки -->
+        <button class="btn-bottom" data-path="profile" data-pagename="Профиль">
+            <svg width="1.2em" height="1.2em" viewBox="0 0 15 15" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+            </svg>
+            <small>Профиль</small>
+        </button>
+        <button class="btn-bottom" data-path="contacts" data-pagename="Контакты">
+            <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-people-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+            </svg>
+            <small>Контакты</small>
+        </button>
+        <button class="btn-bottom" data-path="list" data-pagename="Список">
+            <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-list-ul" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+            </svg>
+            <small>Список</small>
+        </button>
+        <button class="btn-bottom" data-path="settings" data-pagename="Настройки">
+            <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-gear-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 0 0-5.86 2.929 2.929 0 0 0 0 5.858z"/>
+            </svg>
+            <small>Настройки</small>
+        </button>
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+<script src="./js/script.js"></script>
+</html>
